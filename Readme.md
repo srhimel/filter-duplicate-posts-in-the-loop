@@ -1,7 +1,7 @@
-#Filter Duplicate Posts in the Loop
+# Filter Duplicate Posts in the Loop
 
 
-###Loop no.1
+### Loop no.1
 
 ```
 <?php
@@ -17,7 +17,7 @@ endwhile;
 ?>
 ```
 
-###Loop no.2
+### Loop no.2
 
 ```
 <?php
@@ -32,7 +32,7 @@ endwhile;
 ?>
 ```
 
-###Loop no.3
+### Loop no.3
 
 ```
 <?php
