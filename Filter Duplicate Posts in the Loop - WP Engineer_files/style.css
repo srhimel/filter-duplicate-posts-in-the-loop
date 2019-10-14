@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*
+Theme Name: WPE Hamburg
+Theme URI: http://wpengineer.com
+Description: Child für Hamburg
+Author: Frank Bueltge
+Author URI: http://bueltge.de/
+Template: hamburg
+Version: 1.0
+Tags: 
+*/
+
+/*
+.branding {
+	position: absolute;
+	left: -9999px;
+}
+*/
+
+.execphpwidget {
+	text-align: center;
+}
+.execphpwidget a img {
+	padding: 0 0 1em 0;
+}
+
+pre, code {
+	font-size: .8em;
+}
+
+pre ol > li {
+	padding: 0;
+}
+ol.linenums > li {
+    list-style-type: decimal;
+    padding: 0;
+}
+
+.entry-meta .date {
+	display: initial;
+}

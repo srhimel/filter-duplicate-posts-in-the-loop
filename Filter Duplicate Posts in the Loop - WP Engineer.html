@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class=" realbrowser js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio svg inlinesvg smil svgclippaths" id="hh" style=""><!--<![endif]--><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Filter Duplicate Posts in the Loop - WP Engineer</title>
+		<meta name="application-name" content="WP Engineer">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	
+<!-- This site is optimized with the Yoast SEO Premium plugin v6.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Filter Duplicate Posts in the Loop - WP Engineer">
+<meta property="og:description" content="As the question arises quite often I&#39;d like to show how I make sure that the content presented, which were …">
+<meta property="og:url" content="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/">
+<meta property="og:site_name" content="WP Engineer">
+<meta property="article:tag" content="Code">
+<meta property="article:tag" content="Loop">
+<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="template tag">
+<meta property="article:tag" content="WordPress">
+<meta property="article:tag" content="WordPress Themes">
+<meta property="article:tag" content="WordPress Tutorials">
+<meta property="article:tag" content="WP">
+<meta property="article:section" content="WordPress Hacks">
+<meta property="article:published_time" content="2009-09-28T20:16:56+02:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="As the question arises quite often I&#39;d like to show how I make sure that the content presented, which were […]">
+<meta name="twitter:title" content="Filter Duplicate Posts in the Loop - WP Engineer">
+<script async="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/analytics.js.download"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/wpengineer.com\/","name":"WP Engineer","potentialAction":{"@type":"SearchAction","target":"https:\/\/wpengineer.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="WP Engineer » Feed" href="https://wpengineer.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="WP Engineer » Comments Feed" href="https://wpengineer.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="WP Engineer » Filter Duplicate Posts in the Loop Comments Feed" href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wpengineer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Filter Duplicate Posts in the Loop - WP Engineer_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Filter Duplicate Posts in the Loop - WP Engineer_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="webfonts-css" href="./Filter Duplicate Posts in the Loop - WP Engineer_files/css" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='lte8-css'  href='https://wpengineer.com/wp-content/themes/hamburg/assets/css/style.ie.min.css?ver=1.0' type='text/css' media='all' />
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<link rel="stylesheet" id="style-css" href="./Filter Duplicate Posts in the Loop - WP Engineer_files/style.min(1).css" type="text/css" media="all">
+<!--<![endif]-->
+<link rel="stylesheet" id="hamburg-child-style-css" href="./Filter Duplicate Posts in the Loop - WP Engineer_files/style.css" type="text/css" media="screen">
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/modernizr.min.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/external-tracking.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://wpengineer.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wpengineer.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://wpengineer.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.2.3">
+<link rel="shortlink" href="https://wpengineer.com/?p=1719">
+<link rel="alternate" type="application/json+oembed" href="https://wpengineer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwpengineer.com%2F1719%2Ffilter-duplicate-posts-in-the-loop%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://wpengineer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwpengineer.com%2F1719%2Ffilter-duplicate-posts-in-the-loop%2F&amp;format=xml">
+
+<link rel="author" href="https://plus.google.com/b/116222459590165758815/116222459590165758815/about">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Filter Duplicate Posts in the Loop - WP EngineerWP Engineer">
+<meta property="og:description" content="Filter Duplicate Posts in the Loop - WP EngineerAs the question arises quite often I&#39;d like to show how I make sure that the content presented, which were […]">
+<meta property="og:url" content="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/">
+<meta property="og:site_name" content="WP Engineer">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://lh5.googleusercontent.com/-OdBxSv4WTqg/AAAAAAAAAAI/AAAAAAAAABI/pYkMvumqKRc/s250-c-k/photo.jpg">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<link rel="icon" href="https://wpengineer.com/wp-content/uploads/cropped-photo-32x32.png" sizes="32x32">
+<link rel="icon" href="https://wpengineer.com/wp-content/uploads/cropped-photo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://wpengineer.com/wp-content/uploads/cropped-photo-180x180.png">
+<meta name="msapplication-TileImage" content="https://wpengineer.com/wp-content/uploads/cropped-photo-270x270.png">
+<!-- Google Analytics Tracking by Google Analyticator 6.5.4: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">
+    var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-84287149-1', 'auto');
+
+	ga('set', 'anonymizeIp', true);
+ 
+	ga('send', 'pageview');
+</script>
+<script type="text/javascript" async="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/bsa.js.download"></script><link rel="stylesheet" type="text/css" href="./Filter Duplicate Posts in the Loop - WP Engineer_files/prettify.css"><script type="text/javascript" id="_bsap_js_c183f9e5bf4b65c652f6e31ad5b9c35d" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/s_c183f9e5bf4b65c652f6e31ad5b9c35d.js.download" async="async"></script><script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/pro.js.download" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/saved_resource" async="async"></script></head>
+<body class="post-template-default single single-post postid-1719 single-format-standard sidebar-content-sidebar widget-area-sidebar-1-active menu-primary-active group-blog color-scheme-blue">
+		<div class="navbar fixed-top">
+		<div class="row">
+					<div class="branding">
+				<h1 class="site-title">
+					<a href="https://wpengineer.com/" title="WP Engineer">
+						WP Engineer					</a>
+				</h1>
+				<p class="site-description">WordPress News, Hacks, Tips, Tutorials, Plugins and Themes</p>
+			</div>
+				</div>
+	</div>	<div class="site-header no-header-image">
+		<div class="row">
+					<header class="branding" role="banner">
+				<h1 class="site-title">
+					<a href="https://wpengineer.com/" title="WP Engineer">
+						<img src="./Filter Duplicate Posts in the Loop - WP Engineer_files/WPEngineer-Logo-klein-1.png" alt="WP Engineer">
+					</a>
+				</h1>
+				<p class="site-description">WordPress News, Hacks, Tips, Tutorials, Plugins and Themes</p>
+			</header>
+		<div class="site-search">
+	<div class="search-form">
+		<form class="inline-form" action="https://wpengineer.com/" role="search">
+			<label for="s_1">
+				<span>Find…</span>
+				<input id="s_1" name="s" type="text" class="search-input" value="">
+			</label>
+			<div class="search-submit">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</div>		</div>
+	</div>
+
+	<div class="site-navigation navbar">
+		<a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#content" class="visually-hidden skip-link" title="Skip to content">Skip to content</a>
+		
+				<nav class="row site-nav-primary toggle-nav" role="navigation">
+				<button class="menu-toggle" title="Toggle Menu"><span>Menu</span></button><div id="mini-cart-wrapper"></div><ul id="menu-main-head" class="menu">
+				<li id="menu-item-2600" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2600"><a href="https://wpengineer.com/">Home</a></li>
+<li id="menu-item-2598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2598"><a href="https://wpengineer.com/about/">About</a></li>
+
+				</ul>
+				</nav>	</div>	<div class="site-breadcrumb navbar">
+		<nav id="breadcrumb">
+			<ul class="breadcrumb">
+				<li class="breadcrumb-title">
+					<span>You are here:</span>
+				</li>
+				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://wpengineer.com/" itemprop="url"><span itemprop="title">Home</span></a></li><li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://wpengineer.com/" itemprop="url"><span itemprop="title">Posts</span></a></li><li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://wpengineer.com/category/wordpress-hacks/" itemprop="url"><span itemprop="title">WordPress Hacks</span></a></li><li class="current-breadcrumb"><span>Filter Duplicate Posts in the Loop</span></li>			</ul>
+		</nav>
+	</div>	<div class="site-navigation navbar">
+			</div>	<div class="site-main">
+		<div class="row">
+			<div id="primary" class="content-area">
+				<main id="content" class="site-content" role="main">
+					<article id="post-1719" class="post-1719 post type-post status-publish format-standard hentry category-wordpress-hacks tag-code tag-loop tag-php tag-template-tag tag-wordpress tag-wordpress-themes tag-wordpress-tutorials tag-wp no-featured-image">
+		<div class="entry"> 				<header class="entry-header">
+		<h1 class="entry-title">
+			Filter Duplicate Posts in the Loop		</h1>
+	</header><section class="entry-meta">
+		<span class="cat-links">
+		<span class="entry-utility-prep">Posted in: </span> <a href="https://wpengineer.com/category/wordpress-hacks/" title="View all posts in WordPress Hacks">WordPress Hacks</a>	</span>
+	<span class="date"><time class="entry-date" datetime="2009-09-28T20:16:56+02:00"><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/">September 28, 2009</a></time></span><span class="author vcard"><a class="url fn n" href="https://wpengineer.com/author/malo.conny/" title="View all posts by Frank" rel="author">Frank</a></span></section>	<div class="entry-content">
+		<p>As the question arises quite often I'd like to show how I make sure that the content presented, which were output in a loop, not showed up again in a second loop.<br>
+<span id="more-1719"></span><br>
+WordPress identifies posts and pages via ID, which are created in the database and who also play in the output of the loop a crucial role. All assignments or links based on the ID. Therefore, I save in the first loop (<em>Loop No.1 </em>) the IDs, which will be output, in an array. This variable was determined in advance as an array <code class=" prettyprinted" style=""><span class="pln">$do_not_duplicate </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span></code>.</p>
+<h4>Loop no.1</h4>
+<pre lang="php" class=" prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+$do_not_duplicate </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln"> </span><span class="com">// set befor loop variable as array</span><span class="pln">
+
+</span><span class="com">// 1. Loop</span><span class="pln">
+query_posts</span><span class="pun">(</span><span class="str">'ca=1,2,3&amp;showposts=5'</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> have_posts</span><span class="pun">()</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> the_post</span><span class="pun">();</span><span class="pln">
+    $do_not_duplicate</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> $post</span><span class="pun">-&gt;</span><span class="pln">ID</span><span class="pun">;</span><span class="pln"> </span><span class="com">// remember ID's in loop</span><span class="pln">
+    </span><span class="com">// display post ...</span><span class="pln">
+    the_title</span><span class="pun">();</span><span class="pln">
+endwhile</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>After we output the above loop with 5 articles, we have in the array 5 IDs, which we can use now . You can view the array with the PHP-function <code class=" prettyprinted" style=""><a href="http://de2.php.net/manual/de/function.var-dump.php"><span class="pln">var_dump</span><span class="pun">()</span></a></code>.</p>
+<p>In the next loop no. 2 there should be 15 articles displayed, except the articles with the ID's already appearing in loop no. 1. I check with this function <code class=" prettyprinted" style=""><a href="http://de2.php.net/manual/de/function.in-array.php"><span class="pln">in_array</span><span class="pun">()</span></a></code>,<br>
+if the current ID <code class=" prettyprinted" style=""><span class="pln">$post</span><span class="pun">-&gt;</span><span class="pln">ID</span></code> is already existing in the array <code class=" prettyprinted" style=""><span class="pln">$do_not_duplicate</span></code>. Only if the ID is not existing ( <code class=" prettyprinted" style=""><span class="pun">!</span><span class="pln">in_array</span><span class="pun">()</span></code> ) in the array, then it will be displayed in loop no. 2.</p>
+<h4>Loop no.2</h4>
+<pre lang="php" class=" prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="com">// 2. Loop</span><span class="pln">
+query_posts</span><span class="pun">(</span><span class="pln"> </span><span class="str">'cat=4,5,6&amp;showposts=15'</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">have_posts</span><span class="pun">())</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> the_post</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln">in_array</span><span class="pun">(</span><span class="pln"> $post</span><span class="pun">-&gt;</span><span class="pln">ID</span><span class="pun">,</span><span class="pln"> $do_not_duplicate </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// check IDs         </span><span class="pln">
+</span><span class="com">// display posts ...</span><span class="pln">
+        the_title</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+endwhile</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>But there is also an alternative, WordPress has a parameter in the query available - <code class=" prettyprinted" style=""><span class="pln">post__not_in</span></code>, see <a href="http://codex.wordpress.org/Template_Tags/query_posts#Post_.26_Page_Parameters">Codex</a>.<br>
+Also in this parameter, I use an array and in this query are the IDs not included. Depending on which way you go, are thus provides two different syntax, to avoid duplicate content.</p>
+<pre lang="php" class=" prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="com">// another loop without duplicates</span><span class="pln">
+query_posts</span><span class="pun">(</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+    </span><span class="str">'cat'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">456</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">'post__not_in'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $do_not_duplicate
+    </span><span class="pun">)</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> have_posts</span><span class="pun">()</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> the_post</span><span class="pun">();</span><span class="pln">
+    </span><span class="com">// display posts...</span><span class="pln">
+        the_title</span><span class="pun">();</span><span class="pln">
+endwhile</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+	</div><div class="social-sharing row"><aside class="social-sharing-links"><a class="facebook" href="https://www.facebook.com/sharer.php?u=https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/&amp;t=Filter%20Duplicate%20Posts%20in%20the%20Loop" title="Share on Facebook" target="_blank"><i class="icon-facebook"></i></a><a class="googleplus" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/" title="Share on Google+" target="_blank"><i class="icon-google-plus"></i></a><a class="twitter" href="https://twitter.com/share?url=https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/" title="Share on Twitter" target="_blank"><i class="icon-twitter"></i></a></aside></div><footer class="entry-meta"><span class="tag-links"><span class="entry-utility-prep">Tagged </span><a href="https://wpengineer.com/tag/code/" rel="tag">Code</a> <a href="https://wpengineer.com/tag/loop/" rel="tag">Loop</a> <a href="https://wpengineer.com/tag/php/" rel="tag">PHP</a> <a href="https://wpengineer.com/tag/template-tag/" rel="tag">template tag</a> <a href="https://wpengineer.com/tag/wordpress/" rel="tag">WordPress</a> <a href="https://wpengineer.com/tag/wordpress-themes/" rel="tag">WordPress Themes</a> <a href="https://wpengineer.com/tag/wordpress-tutorials/" rel="tag">WordPress Tutorials</a> <a href="https://wpengineer.com/tag/wp/" rel="tag">WP</a></span></footer>	<section class="entry-author">
+		<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/83da24e3dd03e11ff50773d5881a41ff.jpeg" srcset="https://secure.gravatar.com/avatar/83da24e3dd03e11ff50773d5881a41ff?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96">		<div class="author-description">
+			<h4 class="posted-by">
+			<span class="author-by entry-utility-prep">Posted by </span><cite class="fn"><a href="https://wpengineer.com/author/malo.conny/" title="Frank" rel="author">Frank</a></cite>			</h4>
+			<p>Webworker by passion, works with priority in WordPress, developing Plugins, themes and solutions. Frank writes in German language on his private blog <a href="http://bueltge.de/">bueltge.de [by:ltge.de]</a>. He is member of WordPress Germany and writes about news in <a href="http://blog.wordpress-deutschland.org/">WordPress Deutschland blog</a> and is author of a <a href="http://wordpress-buch.bueltge.de/das-buch/">book for WordPress</a>.</p>
+		</div>
+	</section>		</div>
+	</article>	<div id="comments">
+			<p class="nocomments">Comments are closed.</p>
+			<h2 id="comments-title">
+			9 comments		</h2>
+
+				<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="comment-1826">
+		<section id="comment-1826" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/ad6161e5285293b47b8ba6171e04cfe1.jpeg" srcset="https://secure.gravatar.com/avatar/ad6161e5285293b47b8ba6171e04cfe1?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn"><a href="http://www.wplancer.com/" rel="external nofollow" class="url">Banago</a></cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-1826"><time pubdate="" datetime="2009-10-04T23:02:07+02:00">October 4, 2009 @ 11:02 pm</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>Very nice way to work around it. I have been using another approach, but I like this one and I think I will start to use it. Thanks for sharing it!</p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2003">
+		<section id="comment-2003" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/390e083ee5707e04fd172182fbc19cd0" srcset="https://secure.gravatar.com/avatar/390e083ee5707e04fd172182fbc19cd0?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn">designerDru</cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-2003"><time pubdate="" datetime="2009-11-14T01:20:43+02:00">November 14, 2009 @ 1:20 am</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>This is exactly what I've been looking for: 3 separate loops, the first displays the modt recent then sets a $do_not_duplicate to that ID.</p>
+<p>The 2nd loop grabs 6 posts from a specific category, &amp; should not dupe the post from the first loop.</p>
+<p>The 3rd loop grabs 6 posts from a different specific category, &amp; should also not dupe the post from the first loop.</p>
+<p>but no love from the code... If I pass it along would you be willing to take a look?</p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-3569">
+		<section id="comment-3569" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/e6f657be3ef18c068ecde7a9c1161660.jpeg" srcset="https://secure.gravatar.com/avatar/e6f657be3ef18c068ecde7a9c1161660?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn"><a href="http://www.altdesign.it/" rel="external nofollow" class="url">Alt Design</a></cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-3569"><time pubdate="" datetime="2010-02-23T17:10:42+02:00">February 23, 2010 @ 5:10 pm</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>Hi, nice hacks... but what happens to the pagination (eg. wp_navi plugin)?</p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3799">
+		<section id="comment-3799" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/c4a7402401d813c7f3a3fa04f2f2a922.jpeg" srcset="https://secure.gravatar.com/avatar/c4a7402401d813c7f3a3fa04f2f2a922?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn">yeeloon</cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-3799"><time pubdate="" datetime="2010-03-31T10:18:39+02:00">March 31, 2010 @ 10:18 am</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>Hi there... I just stumbled your post after lotsa googling around.. See below if you can help me out - cross posted on (<a href="http://wordpress.org/support/topic/382340?replies=1" rel="nofollow">http://wordpress.org/support/topic/382340?replies=1</a>)</p>
+<p>I need some help on the following. Basically, I have 2 different categories called 'Deals &amp; Offers' and 'San Francisco' where by each categories has several posts under them.</p>
+<p>Now, I'm trying to create a category/page called 'Deals &amp; Offers in San Francisco', whereby the page will query and show posts (assuming there are 20 posts under both these categories) that are categorized in 'Deals &amp; Offers' and 'San Francisco'. This category/page will have its own navigation of Next and Previous links when it exceeds more than 5 posts.</p>
+<p>I applied the code below, but everytime I clicked on the Previous/Next button, it keep showing the most recent 5 posts (categorized under Deals &amp; Offers and San Francisco)... <img draggable="false" class="emoji" alt="🙁" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/1f641.svg"></p>
+<p>How can I possibly show the other remaining 15 posts when I click thru the Next link? Any advice or help would be very much appreciated.. as I have been googling hign and low for this solution, and it seems like nobody has tackle this before?</p>
+<p>Thanks again!</p>
+<p><code class=" prettyprinted" style=""><br><span class="pln"> </span><span class="pun">?</span><span class="pln">php</span><br><span class="pln"> $temp </span><span class="pun">=</span><span class="pln"> $wp_query</span><span class="pun">;</span><br><span class="pln"> $wp_query</span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><br><span class="pln"> $wp_query </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> WP_Query</span><span class="pun">();</span><br><span class="pln"> $wp_query</span><span class="pun">-&gt;</span><span class="pln">query</span><span class="pun">(</span><br><span class="pln"> array</span><span class="pun">(</span><span class="str">'category__and'</span><span class="pun">=&gt;</span><span class="pln">array</span><span class="pun">(</span><span class="lit">64</span><span class="pun">,</span><span class="lit">112</span><span class="pun">),</span><span class="pln"> </span><span class="str">'showposts'</span><span class="pun">=&gt;</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">'&amp;paged'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $paged</span><span class="pun">));</span><br><span class="pln"> </span><span class="pun">?&gt;</span></code></p>
+<p>have_posts()) : $wp_query-&gt;the_post(); ?&gt;<br>
+	&lt;a href="" rel="bookmark"&gt;</p>
+<p></p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-3800">
+		<section id="comment-3800" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/c4a7402401d813c7f3a3fa04f2f2a922.jpeg" srcset="https://secure.gravatar.com/avatar/c4a7402401d813c7f3a3fa04f2f2a922?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn">yeeloon</cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-3800"><time pubdate="" datetime="2010-03-31T10:22:12+02:00">March 31, 2010 @ 10:22 am</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>Sorry.. here's the code below. Remove the '<!--' and '-->'.</p>
+<p>query(<br>
+array('category__and'=&gt;array(64,112), 'showposts'=&gt;1, '&amp;paged' =&gt; $paged));<br>
+? --&gt;</p>
+<p><!-- ?php while ($wp_query-&gt;have_posts()) : $wp_query-&gt;the_post(); ? --><br>
+	&lt;a href="<!-- ?php the_permalink() ? -->" rel="bookmark"&gt;<!-- ?php the_title(); ? --><br>
+<!-- ?php endwhile; ? --></p>
+<p>  <!-- ?php previous_posts_link('&laquo; Previous') ? --><br>
+  <!-- ?php next_posts_link('Next &raquo;') ? --></p>
+<p><!-- ?php $wp_query = null; $wp_query = $temp;? --></p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4365">
+		<section id="comment-4365" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/95613871349a4192a14ed88aa3ec47d9.jpeg" srcset="https://secure.gravatar.com/avatar/95613871349a4192a14ed88aa3ec47d9?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn"><a href="http://stylozero.com/" rel="external nofollow" class="url">Gian</a></cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-4365"><time pubdate="" datetime="2010-05-21T17:24:27+02:00">May 21, 2010 @ 5:24 pm</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>Does this work even if each loop is in a different template file? Or they need to be in the same one?</p>
+<p>Becasue I got 2 loops in two template files (header and sidebar) and can't get it NOT to duplicate.</p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-4510">
+		<section id="comment-4510" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/4376561feb1d19f9be9b2a8f226e7250" srcset="https://secure.gravatar.com/avatar/4376561feb1d19f9be9b2a8f226e7250?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn"><a href="http://www.legendagroup.edu.my/" rel="external nofollow" class="url">Legenda</a></cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-4510"><time pubdate="" datetime="2010-06-17T04:56:28+02:00">June 17, 2010 @ 4:56 am</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>Thanks.. I been looking for this code and found out that your solution is simple and better than other.. Tested 3 loop in same file.. not sure working in different file..</p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-8282">
+		<section id="comment-8282" class="comment">
+			<header class="comment-meta comment-author vcard">
+				<img alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/92b994eb0d9c29ff72fcba8abae16b6d.jpeg" srcset="https://secure.gravatar.com/avatar/92b994eb0d9c29ff72fcba8abae16b6d?s=192&amp;d=https%3A%2F%2Fwpengineer.com%2Fwp-content%2Fthemes%2Fwpe-3%2Fimages%2Fwpe-avatar.png&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96"><cite class="fn"><a href="http://www.wulfnet.co.nz/" rel="external nofollow" class="url">Web Design Auckland</a></cite><a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#comment-8282"><time pubdate="" datetime="2011-04-24T15:50:12+02:00">April 24, 2011 @ 3:50 pm</time></a>			</header>
+
+			
+			<section class="comment post-content">
+				<p>This doesn't work for me. According to the codex query_posts shouldn't be used to create a second loop. But rather a new loop should be started via WP_Query</p>
+				<p>
+								</p>
+			</section>
+		</section>
+	</li><!-- #comment-## -->
+		</ol>
+
+				<h2 id="pingbacks">One pingback</h2>
+		<ol class="pinglist">
+			<li><a href="http://eliseos.net/wordpress/evita-el-contenido-duplicado-en-tus-loops/"><img class="icon" width="16" height="16" alt="" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/favicon"> Evita el contenido duplicado en tus Loops | Eliseos.net</a></li><!-- #comment-## -->
+</ol>
+		</div>				</main>
+			</div>
+				<section id="secondary" class="widget-area sidebar" role="complementary">
+		<aside id="execphp-4" class="widget widget_execphp"><h3 class="widget-title">Ad Zone</h3>			<div class="execphpwidget"><a href="http://multilingualpress.org/?utm_source=wpengineer.com&amp;utm_medium=Banner&amp;utm_campaign=MLP3WPENGINEER" title="The plugin solution for multilingual languages in WordPress"><img src="./Filter Duplicate Posts in the Loop - WP Engineer_files/wpengineer_sidebar.png"></a><br><br>
+<!-- BuySellAds Zone Code -->
+<div id="bsap_1237839" class="bsap bsap_1237839" style="margin:0 auto; text-align:center;" data-serve="CE7IKKV"></div>
+<!-- End BuySellAds Zone Code --></div>
+		</aside><aside id="recent-comments-3" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul class="recentcomments-list"><li class="recentcomments"><a href="https://mailoptin.io/" rel="external nofollow" class="url">Collins Agbonghama</a> on <a href="https://wpengineer.com/2822/customizing-the-user-registration-notification-emails/#comment-39814">Customizing the User Registration Notification eMails</a></li><li class="recentcomments"><a href="https://www.bloggerstutor.com/" rel="external nofollow" class="url">Amit kumar</a> on <a href="https://wpengineer.com/2813/download-older-plugin-versions-from-wordpress-org/#comment-39793">Download older plugin versions from wordpress.org</a></li><li class="recentcomments"><a href="http://milano.incontripro.com/" rel="external nofollow" class="url">Bakeca Incontri Milano</a> on <a href="https://wpengineer.com/2813/download-older-plugin-versions-from-wordpress-org/#comment-39778">Download older plugin versions from wordpress.org</a></li><li class="recentcomments"><a href="http://www.123greetingsquotes.com/" rel="external nofollow" class="url">PURNA</a> on <a href="https://wpengineer.com/2747/download-older-plugin-versions-from-wordpress-org-old/#comment-39669">Download older plugin versions from wordpress.org</a></li><li class="recentcomments"><a href="http://bestwhatsappstatus.com/" rel="external nofollow" class="url">Girish Chouhan</a> on <a href="https://wpengineer.com/2747/download-older-plugin-versions-from-wordpress-org-old/#comment-39611">Download older plugin versions from wordpress.org</a></li></ul></aside><aside id="categories-3" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+				<li class="cat-item cat-item-9"><a href="https://wpengineer.com/category/wordpress-hacks/">WordPress Hacks</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="https://wpengineer.com/category/wordpress-news/">WordPress News</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://wpengineer.com/category/wordpress-plugins/">WordPress Plugins</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="https://wpengineer.com/category/wordpress-themes/">WordPress Themes</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="https://wpengineer.com/category/wordpress-tutorials/">WordPress Tutorials</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://wpengineer.com/category/wpengineer-misc/">WPengineer Misc</a>
+</li>
+		</ul>
+			</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">Tags</h3><div class="tagcloud"><a href="https://wpengineer.com/tag/advent/" class="tag-cloud-link tag-link-173 tag-link-position-1" style="font-size: 11.5555555556pt;" aria-label="advent (11 items)">advent</a>
+<a href="https://wpengineer.com/tag/advent-calendar/" class="tag-cloud-link tag-link-172 tag-link-position-2" style="font-size: 16.962962963pt;" aria-label="Advent Calendar (63 items)">Advent Calendar</a>
+<a href="https://wpengineer.com/tag/advertisement/" class="tag-cloud-link tag-link-61 tag-link-position-3" style="font-size: 8pt;" aria-label="Advertisement (3 items)">Advertisement</a>
+<a href="https://wpengineer.com/tag/atom/" class="tag-cloud-link tag-link-52 tag-link-position-4" style="font-size: 8pt;" aria-label="Atom (3 items)">Atom</a>
+<a href="https://wpengineer.com/tag/backend/" class="tag-cloud-link tag-link-33 tag-link-position-5" style="font-size: 14.2962962963pt;" aria-label="backend (27 items)">backend</a>
+<a href="https://wpengineer.com/tag/cache/" class="tag-cloud-link tag-link-169 tag-link-position-6" style="font-size: 8.74074074074pt;" aria-label="cache (4 items)">cache</a>
+<a href="https://wpengineer.com/tag/code/" class="tag-cloud-link tag-link-28 tag-link-position-7" style="font-size: 18.1481481481pt;" aria-label="Code (93 items)">Code</a>
+<a href="https://wpengineer.com/tag/comments/" class="tag-cloud-link tag-link-23 tag-link-position-8" style="font-size: 12.2962962963pt;" aria-label="comments (14 items)">comments</a>
+<a href="https://wpengineer.com/tag/constants/" class="tag-cloud-link tag-link-27 tag-link-position-9" style="font-size: 10.2222222222pt;" aria-label="Constants (7 items)">Constants</a>
+<a href="https://wpengineer.com/tag/css/" class="tag-cloud-link tag-link-71 tag-link-position-10" style="font-size: 10.5925925926pt;" aria-label="CSS (8 items)">CSS</a>
+<a href="https://wpengineer.com/tag/design/" class="tag-cloud-link tag-link-72 tag-link-position-11" style="font-size: 10.5925925926pt;" aria-label="Design (8 items)">Design</a>
+<a href="https://wpengineer.com/tag/development/" class="tag-cloud-link tag-link-114 tag-link-position-12" style="font-size: 17.037037037pt;" aria-label="development (65 items)">development</a>
+<a href="https://wpengineer.com/tag/feed/" class="tag-cloud-link tag-link-50 tag-link-position-13" style="font-size: 11.2592592593pt;" aria-label="Feed (10 items)">Feed</a>
+<a href="https://wpengineer.com/tag/hack/" class="tag-cloud-link tag-link-15 tag-link-position-14" style="font-size: 12.0740740741pt;" aria-label="hack (13 items)">hack</a>
+<a href="https://wpengineer.com/tag/javascript/" class="tag-cloud-link tag-link-64 tag-link-position-15" style="font-size: 11.7777777778pt;" aria-label="JavaScript (12 items)">JavaScript</a>
+<a href="https://wpengineer.com/tag/loop/" class="tag-cloud-link tag-link-57 tag-link-position-16" style="font-size: 8pt;" aria-label="Loop (3 items)">Loop</a>
+<a href="https://wpengineer.com/tag/multilanguage/" class="tag-cloud-link tag-link-98 tag-link-position-17" style="font-size: 8.74074074074pt;" aria-label="Multilanguage (4 items)">Multilanguage</a>
+<a href="https://wpengineer.com/tag/multisite/" class="tag-cloud-link tag-link-191 tag-link-position-18" style="font-size: 8.74074074074pt;" aria-label="Multisite (4 items)">Multisite</a>
+<a href="https://wpengineer.com/tag/navigation/" class="tag-cloud-link tag-link-14 tag-link-position-19" style="font-size: 9.33333333333pt;" aria-label="navigation (5 items)">navigation</a>
+<a href="https://wpengineer.com/tag/pagination/" class="tag-cloud-link tag-link-129 tag-link-position-20" style="font-size: 8.74074074074pt;" aria-label="Pagination (4 items)">Pagination</a>
+<a href="https://wpengineer.com/tag/php/" class="tag-cloud-link tag-link-17 tag-link-position-21" style="font-size: 19.4814814815pt;" aria-label="PHP (140 items)">PHP</a>
+<a href="https://wpengineer.com/tag/plugin/" class="tag-cloud-link tag-link-5 tag-link-position-22" style="font-size: 17.1111111111pt;" aria-label="Plugin (67 items)">Plugin</a>
+<a href="https://wpengineer.com/tag/rss/" class="tag-cloud-link tag-link-51 tag-link-position-23" style="font-size: 8.74074074074pt;" aria-label="RSS (4 items)">RSS</a>
+<a href="https://wpengineer.com/tag/search/" class="tag-cloud-link tag-link-18 tag-link-position-24" style="font-size: 10.962962963pt;" aria-label="Search (9 items)">Search</a>
+<a href="https://wpengineer.com/tag/security/" class="tag-cloud-link tag-link-112 tag-link-position-25" style="font-size: 10.5925925926pt;" aria-label="security (8 items)">security</a>
+<a href="https://wpengineer.com/tag/shortcode/" class="tag-cloud-link tag-link-60 tag-link-position-26" style="font-size: 8.74074074074pt;" aria-label="Shortcode (4 items)">Shortcode</a>
+<a href="https://wpengineer.com/tag/sponsor/" class="tag-cloud-link tag-link-105 tag-link-position-27" style="font-size: 8.74074074074pt;" aria-label="Sponsor (4 items)">Sponsor</a>
+<a href="https://wpengineer.com/tag/template-tag/" class="tag-cloud-link tag-link-29 tag-link-position-28" style="font-size: 13.9259259259pt;" aria-label="template tag (24 items)">template tag</a>
+<a href="https://wpengineer.com/tag/template_tag/" class="tag-cloud-link tag-link-35 tag-link-position-29" style="font-size: 10.5925925926pt;" aria-label="template_tag (8 items)">template_tag</a>
+<a href="https://wpengineer.com/tag/theme/" class="tag-cloud-link tag-link-19 tag-link-position-30" style="font-size: 17.4814814815pt;" aria-label="Theme (75 items)">Theme</a>
+<a href="https://wpengineer.com/tag/update/" class="tag-cloud-link tag-link-43 tag-link-position-31" style="font-size: 10.5925925926pt;" aria-label="update (8 items)">update</a>
+<a href="https://wpengineer.com/tag/widget/" class="tag-cloud-link tag-link-58 tag-link-position-32" style="font-size: 11.5555555556pt;" aria-label="Widget (11 items)">Widget</a>
+<a href="https://wpengineer.com/tag/widget-api/" class="tag-cloud-link tag-link-118 tag-link-position-33" style="font-size: 8.74074074074pt;" aria-label="Widget API (4 items)">Widget API</a>
+<a href="https://wpengineer.com/tag/wordpress/" class="tag-cloud-link tag-link-3 tag-link-position-34" style="font-size: 22pt;" aria-label="WordPress (311 items)">WordPress</a>
+<a href="https://wpengineer.com/tag/wordpress-hacks/" class="tag-cloud-link tag-link-272 tag-link-position-35" style="font-size: 14pt;" aria-label="WordPress Hacks (25 items)">WordPress Hacks</a>
+<a href="https://wpengineer.com/tag/wordpress-plugins/" class="tag-cloud-link tag-link-275 tag-link-position-36" style="font-size: 13.4814814815pt;" aria-label="WordPress Plugins (21 items)">WordPress Plugins</a>
+<a href="https://wpengineer.com/tag/wordpress-themes/" class="tag-cloud-link tag-link-273 tag-link-position-37" style="font-size: 14.8148148148pt;" aria-label="WordPress Themes (32 items)">WordPress Themes</a>
+<a href="https://wpengineer.com/tag/wordpress-tutorials/" class="tag-cloud-link tag-link-274 tag-link-position-38" style="font-size: 17.1111111111pt;" aria-label="WordPress Tutorials (66 items)">WordPress Tutorials</a>
+<a href="https://wpengineer.com/tag/wp/" class="tag-cloud-link tag-link-20 tag-link-position-39" style="font-size: 19.1111111111pt;" aria-label="WP (125 items)">WP</a>
+<a href="https://wpengineer.com/tag/wp27/" class="tag-cloud-link tag-link-7 tag-link-position-40" style="font-size: 11.7777777778pt;" aria-label="wp2.7 (12 items)">wp2.7</a>
+<a href="https://wpengineer.com/tag/wp28/" class="tag-cloud-link tag-link-100 tag-link-position-41" style="font-size: 12.2962962963pt;" aria-label="wp2.8 (14 items)">wp2.8</a>
+<a href="https://wpengineer.com/tag/wp2-9/" class="tag-cloud-link tag-link-146 tag-link-position-42" style="font-size: 12.4444444444pt;" aria-label="wp2.9 (15 items)">wp2.9</a>
+<a href="https://wpengineer.com/tag/wp3-0/" class="tag-cloud-link tag-link-192 tag-link-position-43" style="font-size: 13.037037037pt;" aria-label="WP3.0 (18 items)">WP3.0</a>
+<a href="https://wpengineer.com/tag/wp3-1/" class="tag-cloud-link tag-link-213 tag-link-position-44" style="font-size: 10.962962963pt;" aria-label="wp3.1 (9 items)">wp3.1</a>
+<a href="https://wpengineer.com/tag/xtreme-one/" class="tag-cloud-link tag-link-219 tag-link-position-45" style="font-size: 8.74074074074pt;" aria-label="Xtreme One (4 items)">Xtreme One</a></div>
+</aside>	</section>	<nav class="backtotop">
+		<a href="https://wpengineer.com/1719/filter-duplicate-posts-in-the-loop/#hh" tabindex="-1">
+			<span class="icon-double-angle-up">
+				Take me higher			</span>
+		</a>
+	</nav>		</div>
+	</div>
+
+	<footer class="site-footer">
+
+		
+		<section id="colophon" role="contentinfo">
+			<div class="row">
+			<p class="site-info">© 2019 <span class="sep icon-beaker"></span> A <a href="http://marketpress.com/" rel="designer">MarketPress</a> Theme</p>			 </div>
+		</section>
+	</footer>
+
+<!-- BuySellAds Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = 'https://s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- End BuySellAds Ad Code -->
+	<script type="text/javascript">
+/* <![CDATA[ */
+var codePrettifyLoaderBaseUrl = "https:\/\/wpengineer.com\/wp-content\/plugins\/code-prettify\/prettify";
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/jquery-script.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/jquery.selectionBox.min.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/hamburg.min.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Filter Duplicate Posts in the Loop - WP Engineer_files/comment-reply.min.js.download"></script>
+
+
+
+</body></html>
